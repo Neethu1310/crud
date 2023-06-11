@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <i class="fa-solid fa-calendar-days fa-shake"></i> System Current Date and Time:{{loginDate | date:'medium'}}
+            <h1 class="text-center mt-5">The Book Shoppe</h1>
+            <p style="text-align: justify;">
+                A digital library, also known as an e-library, is a collection of documents in an organized digital form, available on the internet or on disks. The purpose of an e-library is to store, access, and manage magazine articles, books, audio files, images, and video files.Instant access to resources: There is no luxury such as having access to abundant knowledge and relevant information pertaining to specific subjects. A Digital library cuts short the time and effort one would put into visiting a conventional library and finding the right book.
+            </p>
+
+            <a routerLink="/book/add" style="float: right;" class="btn btn-primary"> <i class="fa-sharp fa-solid fa-user-plus fa-flip"></i> Add Book</a>
+        </div>
+    </div>
+
+    <div class="row">
+     <div class="col-6">
+        <input (keyup)="search($event)" type="text" placeholder="Search Book Name" class="form-control">
+     </div>
+     <div class="col-6">
+      </div>
+    </div>
+
+    
+ 
+    <!-- card designing -->
+    <div class="row mt-4">
+
+       <div class="col-4 " *ngFor="let book of allBooks | filter:searchKey:'name'">
+        <div class="card  mt-4 ">
+           <div class="card-body bg-dark text-white">
+            <img width="100%" height="400px" src="{{book.photo}}" alt="">
+             
+            <ul class="text-center mt-3">
+                <li type="none"><b> Name : {{book.name}}</b> <a routerLink="/book/view/{{book.id}}" style="float: right;"><i class="fa-solid fa-eye text-success"></i></a></li>
+                <li type="none"><b> Publishers : {{book.publisher}}</b><a routerLink="/book/update/{{book.id}}" style="float: right;"> <i class="fa-solid fa-pen-to-square text-primary"></i></a></li>
+                <li type="none"><b> Price : {{book.price}}</b><a (click)="deleteBook(book.id)"  style="float: right;" ><i class="fa-sharp fa-solid fa-trash text-danger"></i></a></li>
+                <button class="btn btn-outline-light mt-3">View more</button>
+            </ul>
+           </div>
+        </div>
+       </div>
+
+       <div class="col-8 ">
+
+       </div>
+
+    </div>
+
+</div>

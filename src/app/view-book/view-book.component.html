@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center my-4"><i class="fa-sharp fa-solid fa-eye me-3 text-primary"></i>View Book</h1>
+            <p style="text-align: justify;">A digital library, also known as an e-library, is a collection of documents in an organized digital form, available on the internet or on disks. The purpose of an e-library is to store, access, and manage magazine articles, books, audio files, images, and video files.Instant access to resources: There is no luxury such as having access to abundant knowledge and relevant information pertaining to specific subjects.</p>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 mt-5">
+        <ul class="list-group">
+            <li class="list-group-item">Name : {{book.name}} </li>
+            <li class="list-group-item">Author : {{book.author}} </li>
+            <li class="list-group-item">Publishers : {{book.publisher}} </li>
+            <li class="list-group-item">Price : {{book.price}}</li>
+            <li class="list-group-item">Genre : {{genreName}}</li>
+
+             </ul>
+      </div>
+
+      <div class="col-6">
+         <!-- image -->
+         <img width="100%" height="500px" [src]=" book.photo " alt="">
+      </div>
+    </div>
+
+     <a routerLink="/" type="submit" value="Go Back"  class="btn btn-outline-primary"><i class="fa-sharp fa-solid fa-backward-step me-2"></i>Go Back</a>
+</div>
+

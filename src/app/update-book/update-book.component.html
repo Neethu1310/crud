@@ -1,0 +1,52 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center my-4"><i class="fa-solid fa-pen-to-square text-primary"></i>Update Book</h1>
+            <p style="text-align: justify;">A digital library, also known as an e-library, is a collection of documents in an organized digital form, available on the internet or on disks. The purpose of an e-library is to store, access, and manage magazine articles, books, audio files, images, and video files.Instant access to resources: There is no luxury such as having access to abundant knowledge and relevant information pertaining to specific subjects.</p>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+         <!-- form -->
+         <form class="m-5 border border-3 rounded p-4">
+
+            <div class="mt-2">
+                <input [(ngModel)]="book.name" name="bookname" type="text"  class="form-control" placeholder="Name">
+            </div>
+            <div class="mt-2">
+                <input [(ngModel)]="book.photo" name="bookphoto" type="text"  class="form-control" placeholder="Photo Url">
+            </div>
+            <div class="mt-2">
+                <input [(ngModel)]="book.author" name="bookauthor" type="text"  class="form-control" placeholder="Author">
+            </div>
+            <div class="mt-2">
+                <input [(ngModel)]="book.publisher" name="bookpublisher" type="text"  class="form-control" placeholder="Publishers">
+            </div>
+            <div class="mt-2">
+                <input [(ngModel)]="book.price" name="bookprice" type="text"  class="form-control" placeholder="Price">
+            </div>
+            <div class="mt-2">
+                <select [(ngModel)]="book.genreId" name="bookgroup" id="" class="form-control">
+                    <option value="" selected hidden disabled>Genre</option>
+                    <option [value]="gen.id" *ngFor="let gen of genre">{{gen.name}}</option>
+                     
+                </select>           
+             </div>
+             
+             <div class="mt-3">
+                <input type="submit"(click)="updateBook()" value="update" class="btn btn-success">
+                <a routerLink="/" class="btn btn-danger" style="float: right;">Close <i class="fa-sharp fa-regular fa-circle-xmark"></i></a>
+             </div>
+         </form>
+      </div>
+
+      <div class="col">
+         <!-- image -->
+         <img width="100%"  [src]=" book.photo " alt="">
+      </div>
+    </div>
+
+</div>
+
